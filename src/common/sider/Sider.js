@@ -1,8 +1,13 @@
 //  这是侧边栏组件
 import React from 'react';
 
+// 引入图片
+import {Logo} from './style'
+
 // 引入仓库
 import store from '../../store'
+
+import { Link } from 'react-router-dom'
 
 // 引入 antd 的一些组件需要
 import { Layout, Menu, Icon } from 'antd'
@@ -30,14 +35,16 @@ class Sider extends React.Component {
               collapsed={this.state.collapsed}
               onCollapse={this.onCollapse}
               >
-              <div className="logo" />
+              <Logo />
               <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                   {
                     this.state.menus.map((item,index) => {
                       return (
                           <Menu.Item key={index + 1}>
-                            <Icon type={item.icon} />
-                            <span>{ item.name }</span>
+                            <Link to={item.href}>
+                              <Icon type={item.icon} />
+                              <span>{ item.name }</span>
+                            </Link>
                           </Menu.Item>
                       )
                     })

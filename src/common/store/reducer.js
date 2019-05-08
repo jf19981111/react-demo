@@ -1,9 +1,9 @@
 // common 整体上的仓库 reducer
 const defaultState = {
     menus: [
-        { id: 1, name: '商品店铺', icon: 'schedule' },
-        { id: 2, name: '详情信息', icon: 'ordered-list' },
-        { id: 3, name: '个人中心', icon: 'user' },
+        { id: 1, name: '商品店铺', icon: 'schedule', href: "/shop" },
+        { id: 2, name: '详情信息', icon: 'ordered-list', href: "/detail/:id" },
+        { id: 3, name: '个人中心', icon: 'user', href: "/center" },
     ]
 }
 
